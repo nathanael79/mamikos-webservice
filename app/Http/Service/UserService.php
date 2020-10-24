@@ -22,4 +22,9 @@ class UserService extends BaseService
         return $result;
     }
 
+    public function resetCredit(){
+        $this->model->where('role','REGULER')->where('credit','<',20)->update(['credit' => 20]);
+        $this->model->where('role','PREMIUM')->where('credit','<',40)->update(['credit' => 40]);
+    }
+
 }
