@@ -111,6 +111,17 @@ class KostController extends Controller
         }
     }
 
+    public function getKostsByUserID(){
+        $user = $this->jwtService->getAuthenticatedUser();
+        $data = $this->kostService->getKostsByUserID($user->id);
+
+        if(empty($data)){
+            return $this->responseJson($data, self::HTTP_STATUS_NO_CONTENT_MESSAGE, self::HTTP_STATUS_NO_CONTENT);
+        }else{
+            return $this->responseJson($data, self::HTTP_STATUS_OK_MESSAGE, self::HTTP_STATUS_OK);
+        }
+    }
+
     public function delete($id){
         $data = $this->kostService->delete($id);
         return $this->responseJson(null, self::HTTP_STATUS_OK_MESSAGE, self::HTTP_STATUS_OK);

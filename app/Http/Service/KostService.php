@@ -13,4 +13,10 @@ class KostService extends BaseService
     {
         parent::__construct($kost);
     }
+
+    public function getKostsByUserID($userID){
+        $data = $this->model->where('user_id',$userID)->get();
+
+        return $data;
+    }
 }

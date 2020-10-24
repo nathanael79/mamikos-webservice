@@ -13,4 +13,13 @@ class UserService extends BaseService
         parent::__construct($user);
     }
 
+    public function decreaseCredit(int $id){
+        $user = $this->findById($id);
+        $credit = $user->credit - 5;
+        $data['credit'] = $credit;
+        $result = $this->update($id, $data);
+
+        return $result;
+    }
+
 }
