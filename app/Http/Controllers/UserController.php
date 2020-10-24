@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\API\v1;
+namespace App\Http\Controllers;
 
 
 use App\Http\Controllers\Controller;
