@@ -21,6 +21,7 @@ class CreateKostsTable extends Migration
             $table->text('address');
             $table->string('city');
             $table->longText('detail');
+            $table->bigInteger('price');
             $table->bigInteger('room_amount');
             $table->enum('availability', ['AVAILABLE','NOT-AVAILABLE']);
             $table->timestamps();

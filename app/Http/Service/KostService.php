@@ -4,7 +4,13 @@
 namespace App\Http\Service;
 
 
-class KostService
-{
+use App\Models\Kost;
+use Illuminate\Database\Eloquent\Model;
 
+class KostService extends BaseService
+{
+    public function __construct(Kost $kost)
+    {
+        parent::__construct($kost);
+    }
 }

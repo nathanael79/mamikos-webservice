@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BaseService implements ServiceInterface
 {
-    private $model;
+    protected $model;
 
     public function __construct(Model $model)
     {

@@ -20,14 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f467caf4-a684-4cef-9241-73cde76330a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Service/BaseService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Service/ServiceInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Service/UserService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Service/JWTService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Service/SearchService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/495256c1-98ef-46df-8b32-d9d50f12a5b0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/495256c1-98ef-46df-8b32-d9d50f12a5b0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Service/BaseService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/BaseService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Service/KostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/KostService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/UserService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_164544_create_kosts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_164544_create_kosts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603510501335</updated>
       <workItem from="1603510503681" duration="1773000" />
-      <workItem from="1603557230499" duration="3667000" />
+      <workItem from="1603557230499" duration="9376000" />
     </task>
     <servers />
   </component>
@@ -226,17 +230,21 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="521" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1603559089591" />
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603560398095">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603564205064">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603560398095" />
-    <state x="335" y="163" key="NewPhpClassDialog" timestamp="1603559937655">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603564205064" />
+    <state x="335" y="163" key="NewPhpClassDialog" timestamp="1603568746481">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="335" y="163" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1603559937655" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1603560491216">
+    <state x="335" y="163" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1603568746481" />
+    <state x="547" y="212" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1603569373383">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1603560491216" />
+    <state x="547" y="212" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1603569373383" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1603568768336">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1603568768336" />
   </component>
 </project>

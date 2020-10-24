@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\KostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +25,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'v1'], function (){
     Route::post('/login',[LoginController::class, 'authenticate'])->name('login');
     Route::post('/register',[RegisterController::class, 'register'])->name('register');
+
+    Route::group(['middleware' => ['jwt.verify']], function () {
+        Route::group(['prefix' => 'kost'], function () {
+            Route::get('/', [KostController::class, 'getKosts'])->name('kost_get_all');
+            Route::get('/{id}', [KostController::class, 'getKost'])->name('kost_get_detail');
+            Route::post('/', [KostController::class, 'create'])->name('kost_create');
+            Route::put('/{id}', [KostController::class, 'update'])->name('kost_update');
+            Route::delete('/{id}', [KostController::class, 'delete'])->name('kost_delete');
+        });
+    });
+
+    Route::post('/search', [SearchController::class, 'searchKost'])->name('search_kost');
+    Route::get('/kost-detail/{id}', [KostController::class, 'getKost'])->name('kost_user_get_detail');
 });

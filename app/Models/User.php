@@ -55,4 +55,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function kosts(){
+        return $this->hasMany(Kost::class);
+    }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Service;
 
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 
 class UserService extends BaseService
 {
@@ -13,4 +12,5 @@ class UserService extends BaseService
     {
         parent::__construct($user);
     }
+
 }
