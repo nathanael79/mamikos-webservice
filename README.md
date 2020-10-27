@@ -1,61 +1,174 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Mamikos Webservice
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+MamiKos is a web app where users can search kost that have been added by the owner. Also, users can ask about room availability using the credit system.
 
-## About Laravel
+# Requirements
+- PHP >= 7.3
+- BCMath PHP Extension
+- Ctype PHP Extension
+- Fileinfo PHP Extension
+- JSON PHP Extension
+- Mbstring PHP Extension
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+- Webserver
+- MySQL
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ - Clone this project to your local computer
+ - Use `composer install` inside cloned project to install the vendor
+ - Copy paste `.env.example` to `.env`, dont forget to setup `.env` according to your environment like database connection, app_debug, app_url and app.env
+ - Finally, you can run it using `php artisan serve` and it will show up with default url (http://localhost:8000)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# API Documentation
+All of the API except Register & Login, need to bearer a token that created by system.
+In this repository also contain [Postman Collection](./mamikos.postman_collection.json) to give you an easier way to test this API 
+ 
+## HTTP Status Code
+ - 200 = OK
+ - 201 = Created
+ - 500 = Failed
+ - 404 = Data not found/empty
+ - 403 = Forbidden
+ - 422 = Unprocessable Entity
 
-## Learning Laravel
+## AUTHENTICATION
+### Register
+URL: http://localhost:8000/api/v1/register
+Method: POST
+Body:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| name | string | Yes | - |
+| email | email | Yes | - |
+| password | string | Yes | string, min:6 |
+| address | string | Yes | - |
+| city | string | Yes | - |
+| role | string | Yes | PREMIUM, REGULER OR OWNER |
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Login
+URL: http://localhost:8000/api/v1/login
+Method: POST
+Body:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| email | email | Yes | - |
+| password | string | Yes | - |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## KOST (OWNER)
+All of KOST API is created by Owner User ROLE, the other's role cannot using KOST API.
+### Create a KOST
+URL: http://localhost:8000/api/v1/kost
+Method: POST
+Body:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| name | string | Yes | - |
+| address | string | Yes | - |
+| city | string | Yes | - |
+| detail | text | No | - |
+| price | integer | Yes | - |
+| room_amount | integer | Yes | - |
+| availibility | enum | AVAILABLE, NOT-AVAILABLE | - |
 
-## Laravel Sponsors
+### Update Kost
+URL: http://localhost:8000/api/v1/account/update/{id}
+Method: PUT
+Body:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| name | string | Yes | - |
+| address | string | No | - |
+| city | string | No | - |
+| detail | text | No | - |
+| price | integer | No | - |
+| room_amount | No | Yes | - |
+| availibility | No | AVAILABLE, NOT-AVAILABLE | - |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### GET ALL Kost (For Owner)
+URL: https://localhost:8000/api/v1/kost
+Method: GET
 
-### Premium Partners
+### GET Detail Kost (For Owner)
+URL: https://localhost:8000/api/v1/kost/{id}
+Method: GET
+Parameter:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| id | integer | Yes | - |
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+### Delete KOST 
+URL: https://localhost:8000/api/v1/kost/{id}
+Method: DELETE
+Parameter:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| id | integer | Yes | - |
 
-## Contributing
+## KOST (USER)
+### GET ALL Kost (For User)
+URL: https://localhost:8000/api/v1/kost-all
+Method: GET
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### GET Detail Kost (For User)
+URL: https://localhost:8000/api/v1/kost-detail/{id}
+Method: GET
+Parameter:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| id | integer | Yes | - |
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## SEARCH
+URL: https://localhost:8000/api/v1/search
+Method: POST
+Parameter:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| fields | string | Yes | only can be filled by name, location, price (comma delimiter) |
+Body:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| keyword | string | No |- |
 
-## Security Vulnerabilities
+## Ask Availibity
+### (ASK Feature for USER)
+URL: https://localhost:8000/api/v1/chat
+Method: POST
+Body:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| kost_id | integer | Yes |- |
+| message | string | Yes |- |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### (Reply Feature for Owner)
+URL: https://localhost:8000/api/v1/chat/{id}
+Method: POST
+Parameter:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| id | integer | Yes | chat_id |
+Body:
+| Field Name | Type  | Required | Description |
+|--|--|--|--|
+| replies | string | Yes |- |
 
+
+## Credits
+ 
+Fullstack Developer - Imanuel Ronaldo (@nathanael79)
+ 
 ## License
+ 
+The MIT License (MIT)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Copyright (c) 2020 Imanuel Ronaldo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

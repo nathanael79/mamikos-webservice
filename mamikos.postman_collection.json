@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "aa410fe8-b3c0-4444-adbc-e52337ca1683",
+		"name": "mamikos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "KOST",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFtaWtvcy50ZXN0XC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTYwMzU2OTMzMywiZXhwIjoxNjAzNTcyOTMzLCJuYmYiOjE2MDM1NjkzMzMsImp0aSI6IkRwUTJpYUo2TVpsZlVwZksiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.AuX30hQatkCLB9LBrKKyj2WxKhqlcEyxo_r9bp9I9EY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"jakarta mamikos\",\n    \"address\" : \"mojoarum ii\",\n    \"city\" : \"Jakarta\",\n    \"detail\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum, orci non vestibulum venenatis, magna neque cursus massa, quis porttitor nibh velit eget ipsum. Etiam a convallis magna. Etiam interdum, erat eget placerat consequat, lorem nisl lacinia dui, nec tempus leo sem sit amet turpis. Nam tincidunt, leo et luctus eleifend, sem urna molestie tortor, id egestas sapien ante pharetra enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu suscipit massa. Donec rutrum diam mauris, vel blandit felis mattis a. Phasellus imperdiet aliquet vehicula. Vivamus et lacus nibh. Fusce gravida nibh nec mauris aliquam vestibulum. Fusce ac rutrum eros. Phasellus pretium justo id felis eleifend tincidunt. Curabitur finibus malesuada erat et placerat. Morbi posuere mattis magna, et feugiat nunc luctus at. In ut augue quis nisi mattis porttitor vitae vel tortor. Etiam condimentum cursus hendrerit.\",\n    \"room_amount\" : 8,\n    \"availability\" : \"NOT-AVAILABLE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mamikos.test/api/v1/kost",
+							"protocol": "https",
+							"host": [
+								"mamikos",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFtaWtvcy50ZXN0XC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTYwMzU2OTMzMywiZXhwIjoxNjAzNTcyOTMzLCJuYmYiOjE2MDM1NjkzMzMsImp0aSI6IkRwUTJpYUo2TVpsZlVwZksiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.AuX30hQatkCLB9LBrKKyj2WxKhqlcEyxo_r9bp9I9EY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mamikos.test/api/v1/kost",
+							"protocol": "https",
+							"host": [
+								"mamikos",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFtaWtvcy50ZXN0XC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTYwMzU2NDMxMiwiZXhwIjoxNjAzNTY3OTEyLCJuYmYiOjE2MDM1NjQzMTIsImp0aSI6IkNnNnNNZmVScW4zaE56R1EiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.zNZFv-tJsEBted7f-AiHMSaYNbAP7dwkCxlw9ex39oQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mamikos.test/api/v1/kost/3",
+							"protocol": "https",
+							"host": [
+								"mamikos",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kost",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFtaWtvcy50ZXN0XC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTYwMzU2NDMxMiwiZXhwIjoxNjAzNTY3OTEyLCJuYmYiOjE2MDM1NjQzMTIsImp0aSI6IkNnNnNNZmVScW4zaE56R1EiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.zNZFv-tJsEBted7f-AiHMSaYNbAP7dwkCxlw9ex39oQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://mamikos.test/api/v1/kost/2",
+							"protocol": "https",
+							"host": [
+								"mamikos",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kost",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFtaWtvcy50ZXN0XC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTYwMzU2OTMzMywiZXhwIjoxNjAzNTcyOTMzLCJuYmYiOjE2MDM1NjkzMzMsImp0aSI6IkRwUTJpYUo2TVpsZlVwZksiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.AuX30hQatkCLB9LBrKKyj2WxKhqlcEyxo_r9bp9I9EY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\" : \"100000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mamikos.test/api/v1/kost/5",
+							"protocol": "https",
+							"host": [
+								"mamikos",
+								"test"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kost",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "REGISTER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"premium\",\n    \"email\": \"premium@premium\",\n    \"password\": \"premium123\",\n    \"address\": \"premium surabaya\",\n    \"city\": \"Surabaya\",\n    \"role\": \"PREMIUM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mamikos.test/api/v1/register",
+					"protocol": "https",
+					"host": [
+						"mamikos",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"owner@owner.com\",\n    \"password\": \"owner123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mamikos.test/api/v1/login",
+					"protocol": "https",
+					"host": [
+						"mamikos",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEARCH",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"keyword\": \"mojoarum\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mamikos.test/api/v1/search",
+					"protocol": "https",
+					"host": [
+						"mamikos",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "detail",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USER KOST DETAIL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mamikos.test/api/v1/kost-detail/5",
+					"protocol": "https",
+					"host": [
+						"mamikos",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kost-detail",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KOST ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mamikos.test/api/v1/kost-all",
+					"protocol": "https",
+					"host": [
+						"mamikos",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kost-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AVAILIBILITY ASK",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFtaWtvcy50ZXN0XC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTYwMzU3NjAyMiwiZXhwIjoxNjAzNTc5NjIyLCJuYmYiOjE2MDM1NzYwMjIsImp0aSI6Ik5ZcVBLTVFUSkVnZzVQRkgiLCJzdWIiOjMsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.J2WpZXUuRW0OCQ51KCNcKBG1iouBhqbAAnDhwC2Y4vA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"kost_id\": 4,\n    \"message\": \"hai, apa kos sedang tersedia?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mamikos.test/api/v1/chat",
+					"protocol": "https",
+					"host": [
+						"mamikos",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AVAILIBILITY REPLY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFtaWtvcy50ZXN0XC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTYwMzU3NjAyMiwiZXhwIjoxNjAzNTc5NjIyLCJuYmYiOjE2MDM1NzYwMjIsImp0aSI6Ik5ZcVBLTVFUSkVnZzVQRkgiLCJzdWIiOjMsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.J2WpZXUuRW0OCQ51KCNcKBG1iouBhqbAAnDhwC2Y4vA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"replies\": \"Ya, masih tersedia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mamikos.test/api/v1/chat/5",
+					"protocol": "https",
+					"host": [
+						"mamikos",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"chat",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
